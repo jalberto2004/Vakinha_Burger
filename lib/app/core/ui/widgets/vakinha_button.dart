@@ -32,7 +32,7 @@ class VakinhaButton extends StatelessWidget {
           shape: const StadiumBorder(),
           primary: color
         ),
-        onPressed: (){},),
+        onPressed: onPressed,),
     );
   }
 }
