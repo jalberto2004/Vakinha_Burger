@@ -1,0 +1,11 @@
+
+Figma com o layout:
+https://www.figma.com/file/mKAFF9WKLDpD6h2jOySNcH/Vaquinha-Canal?node-id=0%3A1
+
+URL do Backend:
+http://dartweek.academiadoflutter.com.br/
+
+Aulas 
+https://academiadoflutter.com.br/dw_2022_evento?blog=2a9eppf1k&video=0dd-whi_xLM
+
+

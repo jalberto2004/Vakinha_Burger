@@ -1,0 +1,30 @@
+{
+	"version": "0.2.1",
+	"includes": [
+		""
+	],
+	"permissions": {
+		"authorizationtoken": ""
+	},
+	"connectedServer": {},
+	"configurations": [],
+	"savedTokens": [],
+	"lastConnectedServer": "",
+	"rpoToken": {
+		"token": "",
+		"header": {
+			"alg": "",
+			"typ": ""
+		},
+		"body": {
+			"auth": "",
+			"exp": "1970-01-01T00:00:00.000Z",
+			"iat": "1970-01-01T00:00:00.000Z",
+			"iss": "",
+			"name": "",
+			"sub": ""
+		},
+		"error": "",
+		"warning": ""
+	}
+}
