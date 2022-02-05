@@ -33,28 +33,21 @@ class RegisterController extends GetxController
   }) async {
     try {
       _loading.toggle();
-      
+
       final userLogged = await _authRepository.register(name, email, password);
-      
-      await _authRepository.register(name, email, password);
       _loading.toggle();
 
       // armazena na chave USER_KEY o ID do usuário logado
       GetStorage().write(Constants.USER_KEY, userLogged.id);
-
-    } on RestClientException catch (e,s) {
+    } on RestClientException catch (e, s) {
       _loading.toggle();
-      log('Erro ao registrar usuário (RestClientException)', error: e, stackTrace: s);
-       _message(MessageModel(
-          title: 'Erro',
-          message: e.message,
-          type: MessageType.error));
-    } catch(e,s){
-      log('Erro ao registrar usuário (RegisterController catch)', error: e, stackTrace: s);
-       _message(MessageModel(
-          title: 'Erro',
-          message: 'Erro ao registrar usuário',
-          type: MessageType.error));
+      log('Erro ao registrar usuário', error: e, stackTrace: s);
+      _message(MessageModel(
+          title: 'Erro', message: e.message, type: MessageType.error));
+    } catch (e, s) {
+      log('Erro ao registrar usuário', error: e, stackTrace: s);
+      _message(MessageModel(
+          title: 'Erro', message: 'Erro genérico', type: MessageType.error));
     }
   }
 }

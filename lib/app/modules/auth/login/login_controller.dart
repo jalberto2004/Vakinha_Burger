@@ -9,9 +9,8 @@ import 'package:vakinha_burger/app/core/mixins/messages_mixin.dart';
 import 'package:vakinha_burger/app/repositories/auth/auth_repository.dart';
 
 class LoginController extends GetxController with LoaderMixin, MessagesMixin {
-  
   final AuthRepository _authRepository;
-  
+
   final _loading = false.obs;
   final _message = Rxn<MessageModel>();
 
@@ -26,45 +25,28 @@ class LoginController extends GetxController with LoaderMixin, MessagesMixin {
     messageListner(_message);
   }
 
-  Future<void> login( {
-    required String email,
-    required String password
-  }) async {
-    
+  Future<void> login({required String email, required String password}) async {
     try {
       _loading.toggle();
-      
       final userLogged = await _authRepository.login(email, password);
-      final storage = GetStorage();
-      
-      storage.write(Constants.USER_KEY, userLogged.id );
-      
-      _loading.toggle();
-    } on UserNotFoundException catch (e,s) {
-      
-      _loading.toggle();
-      
-      log('Login ou senha inválidos', error: e, stackTrace: s);
-      _message(
-        MessageModel(
-          title:'Erro',
-          message:'Login ou senha inválidos',
-          type: MessageType.error
-        )
-      );
-    } catch (e,s) {
-      
-      _loading.toggle();
-      
-      log('Erro ao realizar login', error: e, stackTrace: s);
-      _message(
-        MessageModel(
-          title:'Erro',
-          message:'Erro ao realizar login',
-          type: MessageType.error
-        )
-      );
-    }
 
+      final storage = GetStorage();
+      storage.write(Constants.USER_KEY, userLogged.id);
+      _loading.toggle();
+    } on UserNotFoundException catch (e, s) {
+      _loading.toggle();
+      log('Login ou senha inválidos', error: e, stackTrace: s);
+      _message(MessageModel(
+          title: 'Erro',
+          message: 'Login ou senha inválidos',
+          type: MessageType.error));
+    } catch (e, s) {
+      _loading.toggle();
+      log('Erro ao realizar login', error: e, stackTrace: s);
+      _message(MessageModel(
+          title: 'Erro',
+          message: 'Erro ao realizar login',
+          type: MessageType.error));
+    }
   }
 }

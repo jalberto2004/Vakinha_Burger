@@ -9,9 +9,14 @@ Aulas:
 
     Finalizada 3 Aula
 
+Limpeza do Flutter:
+    no terminal devem ser digitados os comandos abaixo
+    flutter clean
+    flutter pub get
+
 Emails cadastrados:
 
-    testebeto@teste.com.br
+    beto@gmail.com
     123456
 
     jalberto2004@gmail.com
