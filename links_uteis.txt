@@ -7,8 +7,6 @@ URL do Backend:
 Aulas:
     https://academiadoflutter.com.br/dw_2022_evento?blog=2a9eppf1k&video=0dd-whi_xLM
 
-    Finalizada 3 Aula
-
 Limpeza do Flutter:
     no terminal devem ser digitados os comandos abaixo
     flutter clean

@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:vakinha_burger/app/core/rest_client/rest_client.dart';
+import 'package:vakinha_burger/app/core/services/shopping_card_service.dart';
 
 class ApplicationBindig implements Bindings {
   @override
@@ -8,5 +9,6 @@ class ApplicationBindig implements Bindings {
       () => RestClient(),
       fenix: true,
     );
+    Get.lazyPut(() => ShoppingCardService());
   }
 }

@@ -5,6 +5,7 @@ import 'package:vakinha_burger/app/core/bindings/application_binding.dart';
 import 'package:vakinha_burger/app/core/vakinha_ui.dart';
 import 'package:vakinha_burger/app/routes/auth_routers.dart';
 import 'package:vakinha_burger/app/routes/home_routes.dart';
+import 'package:vakinha_burger/app/routes/product_routers.dart';
 import 'package:vakinha_burger/app/routes/splash_routers.dart';
 
 Future<void> main() async {
@@ -14,20 +15,20 @@ Future<void> main() async {
 }
 
 class VakinhaBurgerMainApp extends StatelessWidget {
-  const VakinhaBurgerMainApp({ Key? key }) : super(key: key);
+  const VakinhaBurgerMainApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return GetMaterialApp(
-      title:'Vakinha Burger',
+      title: 'Vakinha Burger',
       theme: VakinhaUI.theme,
       initialBinding: ApplicationBindig(),
       getPages: [
         ...SplashRouters.routers,
         ...AuthRouters.routers,
         ...HomeRouters.routers,
-      ],      
+        ...ProductRouters.routers,
+      ],
     );
   }
 }
